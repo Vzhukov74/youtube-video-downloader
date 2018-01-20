@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		F5DEC9B020134CF5005F5DE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEC9AF20134CF5005F5DE3 /* AppDelegate.swift */; };
-		F5DEC9B220134CF5005F5DE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEC9B120134CF5005F5DE3 /* ViewController.swift */; };
-		F5DEC9B520134CF5005F5DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEC9B320134CF5005F5DE3 /* Main.storyboard */; };
 		F5DEC9B720134CF5005F5DE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DEC9B620134CF5005F5DE3 /* Assets.xcassets */; };
 		F5DEC9BA20134CF5005F5DE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEC9B820134CF5005F5DE3 /* LaunchScreen.storyboard */; };
+		F5DEC9C620134E67005F5DE3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEC9C520134E67005F5DE3 /* MainViewController.swift */; };
+		F5DEC9C920134ECC005F5DE3 /* StoryboardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEC9C820134ECC005F5DE3 /* StoryboardList.swift */; };
+		F5DEC9CB20134F48005F5DE3 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEC9CA20134F48005F5DE3 /* MainViewController.storyboard */; };
+		F5DEC9CE20134F6B005F5DE3 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEC9CD20134F6B005F5DE3 /* MainNavigationController.swift */; };
+		F5DEC9D020134FE7005F5DE3 /* MainNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEC9CF20134FE7005F5DE3 /* MainNavigationController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F5DEC9AC20134CF5005F5DE3 /* youtube video downloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "youtube video downloader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DEC9AF20134CF5005F5DE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F5DEC9B120134CF5005F5DE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F5DEC9B420134CF5005F5DE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5DEC9B620134CF5005F5DE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5DEC9B920134CF5005F5DE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5DEC9BB20134CF5005F5DE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5DEC9C520134E67005F5DE3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F5DEC9C820134ECC005F5DE3 /* StoryboardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardList.swift; sourceTree = "<group>"; };
+		F5DEC9CA20134F48005F5DE3 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
+		F5DEC9CD20134F6B005F5DE3 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		F5DEC9CF20134FE7005F5DE3 /* MainNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainNavigationController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,65 @@
 		F5DEC9AE20134CF5005F5DE3 /* youtube video downloader */ = {
 			isa = PBXGroup;
 			children = (
+				F5DEC9C220134E28005F5DE3 /* model */,
+				F5DEC9C120134E21005F5DE3 /* ui */,
 				F5DEC9AF20134CF5005F5DE3 /* AppDelegate.swift */,
-				F5DEC9B120134CF5005F5DE3 /* ViewController.swift */,
-				F5DEC9B320134CF5005F5DE3 /* Main.storyboard */,
 				F5DEC9B620134CF5005F5DE3 /* Assets.xcassets */,
 				F5DEC9B820134CF5005F5DE3 /* LaunchScreen.storyboard */,
 				F5DEC9BB20134CF5005F5DE3 /* Info.plist */,
 			);
 			path = "youtube video downloader";
+			sourceTree = "<group>";
+		};
+		F5DEC9C120134E21005F5DE3 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				F5DEC9CC20134F4F005F5DE3 /* navigation */,
+				F5DEC9C720134E8D005F5DE3 /* common */,
+				F5DEC9C420134E3B005F5DE3 /* detail */,
+				F5DEC9C320134E34005F5DE3 /* main */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		F5DEC9C220134E28005F5DE3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F5DEC9C320134E34005F5DE3 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				F5DEC9C520134E67005F5DE3 /* MainViewController.swift */,
+				F5DEC9CA20134F48005F5DE3 /* MainViewController.storyboard */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		F5DEC9C420134E3B005F5DE3 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		F5DEC9C720134E8D005F5DE3 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				F5DEC9C820134ECC005F5DE3 /* StoryboardList.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		F5DEC9CC20134F4F005F5DE3 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F5DEC9CD20134F6B005F5DE3 /* MainNavigationController.swift */,
+				F5DEC9CF20134FE7005F5DE3 /* MainNavigationController.storyboard */,
+			);
+			path = navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,8 +181,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DEC9BA20134CF5005F5DE3 /* LaunchScreen.storyboard in Resources */,
+				F5DEC9CB20134F48005F5DE3 /* MainViewController.storyboard in Resources */,
 				F5DEC9B720134CF5005F5DE3 /* Assets.xcassets in Resources */,
-				F5DEC9B520134CF5005F5DE3 /* Main.storyboard in Resources */,
+				F5DEC9D020134FE7005F5DE3 /* MainNavigationController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +194,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5DEC9B220134CF5005F5DE3 /* ViewController.swift in Sources */,
+				F5DEC9C920134ECC005F5DE3 /* StoryboardList.swift in Sources */,
 				F5DEC9B020134CF5005F5DE3 /* AppDelegate.swift in Sources */,
+				F5DEC9CE20134F6B005F5DE3 /* MainNavigationController.swift in Sources */,
+				F5DEC9C620134E67005F5DE3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F5DEC9B320134CF5005F5DE3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F5DEC9B420134CF5005F5DE3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F5DEC9B820134CF5005F5DE3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -275,6 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J57LR5C228;
 				INFOPLIST_FILE = "youtube video downloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "md.youtube-video-downloader";
@@ -289,6 +342,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J57LR5C228;
 				INFOPLIST_FILE = "youtube video downloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "md.youtube-video-downloader";
