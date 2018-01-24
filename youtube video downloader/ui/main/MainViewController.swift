@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import SwiftyBeaver
 
 class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let video = HCYoutubeParser.h264videos(withYoutubeURL: URL(string: "https://www.youtube.com/watch?v=teTTOMg_ZsA&list=RDteTTOMg_ZsA")!)
+        let hd = video!["hd720"]
+        let url = hd as! String
+        SwiftyBeaver.info(url)
     }
 }
 
