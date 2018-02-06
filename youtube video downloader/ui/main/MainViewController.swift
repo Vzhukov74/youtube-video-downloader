@@ -11,6 +11,8 @@ import SwiftyBeaver
 
 class MainViewController: UIViewController {
 
+    let downloadCenter = DownloadCenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,16 @@ class MainViewController: UIViewController {
         let hd = video!["hd720"]
         let url = hd as! String
         SwiftyBeaver.info(url)
+        
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let fullPath = documentsPath.appendingPathComponent((URL(string: url)?.lastPathComponent)!)
+        print(fullPath)
+        //downloadCenter.startDownload(url)
+
+    }
+    
+    private func showDetailVC(with model: Video) {
+        
     }
 }
 

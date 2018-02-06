@@ -17,13 +17,25 @@
                     <view key="view" contentMode="scaleToFill" id="24h-Zd-343">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kDK-3t-8NA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kDK-3t-8NA" firstAttribute="trailing" secondItem="Ysm-w1-Hec" secondAttribute="trailing" id="7ip-b4-hcx"/>
+                            <constraint firstItem="kDK-3t-8NA" firstAttribute="bottom" secondItem="Ysm-w1-Hec" secondAttribute="bottom" id="Ymr-n2-CJD"/>
+                            <constraint firstItem="kDK-3t-8NA" firstAttribute="leading" secondItem="Ysm-w1-Hec" secondAttribute="leading" id="qkJ-kZ-IHf"/>
+                            <constraint firstItem="kDK-3t-8NA" firstAttribute="top" secondItem="24h-Zd-343" secondAttribute="top" id="tTU-FQ-NQo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ysm-w1-Hec"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxW-ny-ry6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="96"/>
+            <point key="canvasLocation" x="93.599999999999994" y="95.802098950524751"/>
         </scene>
     </scenes>
 </document>
