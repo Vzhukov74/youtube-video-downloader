@@ -164,6 +164,7 @@
                                               @"length_seconds", // total duration in seconds
                                               @"title", // video title
                                               //@"video_id"
+                                              @"thumbnail_url",
                                               ]; // youtube id
                             
                             for (NSString *key in keys)

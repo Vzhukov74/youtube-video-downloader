@@ -16,8 +16,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = Colors.background
+        
         let video = HCYoutubeParser.h264videos(withYoutubeURL: URL(string: "https://www.youtube.com/watch?v=teTTOMg_ZsA&list=RDteTTOMg_ZsA")!)
         let hd = video!["hd720"]
+        
+        let image = (video!["moreInfo"] as! [String: Any])["thumbnail_url"]
+        print(image)
+        
         let url = hd as! String
         SwiftyBeaver.info(url)
         

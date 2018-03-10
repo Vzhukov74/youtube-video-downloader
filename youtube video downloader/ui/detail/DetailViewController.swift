@@ -19,6 +19,6 @@ class DetailViewController: UIViewController {
     }
 }
 
-extension MainViewController: StoryboardInstanceable {
+extension DetailViewController: StoryboardInstanceable {
     static var storyboardName: StoryboardList = .detail
 }

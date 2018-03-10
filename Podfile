@@ -8,5 +8,8 @@ target 'youtube video downloader' do
   # Pods for youtube video downloader
   pod 'SwiftyBeaver'
   pod 'SwiftLint'
+  pod 'RealmSwift'
+  pod 'DownloadButton'
+  pod 'SDWebImage'
 
 end
