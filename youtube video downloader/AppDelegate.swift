@@ -22,10 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let console = ConsoleDestination()
         log.addDestination(console)
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MainNavigationController.storyboardInstance
-        window?.makeKeyAndVisible()
-        
         return true
     }
 

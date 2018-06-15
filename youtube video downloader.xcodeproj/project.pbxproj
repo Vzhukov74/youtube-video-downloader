@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04F9C00120D39BAA006FCF8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F9C00020D39BAA006FCF8C /* Main.storyboard */; };
 		08F9008F9449FEDB705386C6 /* Pods_youtube_video_downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E729C25E8934FFF079408533 /* Pods_youtube_video_downloader.framework */; };
 		F577B9D3203DA6E500E81FAC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577B9D2203DA6E500E81FAC /* Colors.swift */; };
 		F57BE54D2029BF8600B6F247 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BE54B2029BF8600B6F247 /* VideoCell.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04F9C00020D39BAA006FCF8C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D60FA9D2A47EC974F2C95DF8 /* Pods-youtube video downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube video downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-youtube video downloader/Pods-youtube video downloader.release.xcconfig"; sourceTree = "<group>"; };
 		E41A2F0062ADB682F4107DC5 /* Pods-youtube video downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube video downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-youtube video downloader/Pods-youtube video downloader.debug.xcconfig"; sourceTree = "<group>"; };
 		E729C25E8934FFF079408533 /* Pods_youtube_video_downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youtube_video_downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				F5DEC9B620134CF5005F5DE3 /* Assets.xcassets */,
 				F5DEC9B820134CF5005F5DE3 /* LaunchScreen.storyboard */,
 				F5DEC9BB20134CF5005F5DE3 /* Info.plist */,
+				04F9C00020D39BAA006FCF8C /* Main.storyboard */,
 			);
 			path = "youtube video downloader";
 			sourceTree = "<group>";
@@ -231,7 +234,6 @@
 				F5DEC9A920134CF5005F5DE3 /* Frameworks */,
 				F5DEC9AA20134CF5005F5DE3 /* Resources */,
 				CDF293DCF53E6E55FB0A5F8F /* [CP] Embed Pods Frameworks */,
-				B5846138532BCD037CC7F775 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F9C00120D39BAA006FCF8C /* Main.storyboard in Resources */,
 				F57BE54E2029BF8600B6F247 /* VideoCell.xib in Resources */,
 				F5DEC9BA20134CF5005F5DE3 /* LaunchScreen.storyboard in Resources */,
 				F5DEC9CB20134F48005F5DE3 /* MainViewController.storyboard in Resources */,
@@ -310,21 +313,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B5846138532BCD037CC7F775 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-youtube video downloader/Pods-youtube video downloader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CDF293DCF53E6E55FB0A5F8F /* [CP] Embed Pods Frameworks */ = {
