@@ -23,8 +23,12 @@ class ITunesPlayerCell: UITableViewCell {
         }
     }
     
+    var song: ITunesSong?
+    
     func configure(song: ITunesSong) {
-        
+        self.song = song
+        songNameLabel.text = song.songName
+        authorNameLabel.text = song.authorName
     }
 }
 

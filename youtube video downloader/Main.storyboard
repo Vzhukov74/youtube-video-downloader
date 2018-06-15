@@ -110,6 +110,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="rwu-ki-XHS"/>
                     <connections>
+                        <outlet property="searchBar" destination="mId-HM-2rW" id="YDm-h3-zeB"/>
                         <outlet property="tableView" destination="HUR-Ul-TZO" id="d4v-4n-pIK"/>
                     </connections>
                 </viewController>
