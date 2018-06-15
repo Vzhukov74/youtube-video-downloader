@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		04F9C00120D39BAA006FCF8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F9C00020D39BAA006FCF8C /* Main.storyboard */; };
+		04F9C00520D3A48B006FCF8C /* ITunesPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C00420D3A48B006FCF8C /* ITunesPlayerViewController.swift */; };
+		04F9C00820D3A4A8006FCF8C /* ITunesPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C00620D3A4A8006FCF8C /* ITunesPlayerCell.swift */; };
+		04F9C00920D3A4A8006FCF8C /* ITunesPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F9C00720D3A4A8006FCF8C /* ITunesPlayerCell.xib */; };
 		08F9008F9449FEDB705386C6 /* Pods_youtube_video_downloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E729C25E8934FFF079408533 /* Pods_youtube_video_downloader.framework */; };
 		F577B9D3203DA6E500E81FAC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577B9D2203DA6E500E81FAC /* Colors.swift */; };
 		F57BE54D2029BF8600B6F247 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BE54B2029BF8600B6F247 /* VideoCell.swift */; };
@@ -31,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		04F9C00020D39BAA006FCF8C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		04F9C00420D3A48B006FCF8C /* ITunesPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesPlayerViewController.swift; sourceTree = "<group>"; };
+		04F9C00620D3A4A8006FCF8C /* ITunesPlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesPlayerCell.swift; sourceTree = "<group>"; };
+		04F9C00720D3A4A8006FCF8C /* ITunesPlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ITunesPlayerCell.xib; sourceTree = "<group>"; };
 		D60FA9D2A47EC974F2C95DF8 /* Pods-youtube video downloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube video downloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-youtube video downloader/Pods-youtube video downloader.release.xcconfig"; sourceTree = "<group>"; };
 		E41A2F0062ADB682F4107DC5 /* Pods-youtube video downloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-youtube video downloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-youtube video downloader/Pods-youtube video downloader.debug.xcconfig"; sourceTree = "<group>"; };
 		E729C25E8934FFF079408533 /* Pods_youtube_video_downloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_youtube_video_downloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +83,23 @@
 				D60FA9D2A47EC974F2C95DF8 /* Pods-youtube video downloader.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		04F9C00220D3A402006FCF8C /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				04F9C00620D3A4A8006FCF8C /* ITunesPlayerCell.swift */,
+				04F9C00720D3A4A8006FCF8C /* ITunesPlayerCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		04F9C00320D3A436006FCF8C /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04F9C00420D3A48B006FCF8C /* ITunesPlayerViewController.swift */,
+			);
+			path = "view controllers";
 			sourceTree = "<group>";
 		};
 		979BA64F5D7C1D9AEF80B308 /* Frameworks */ = {
@@ -152,6 +175,8 @@
 		F5DEC9AE20134CF5005F5DE3 /* youtube video downloader */ = {
 			isa = PBXGroup;
 			children = (
+				04F9C00320D3A436006FCF8C /* view controllers */,
+				04F9C00220D3A402006FCF8C /* cell */,
 				F57BE5502029BFB000B6F247 /* developer */,
 				F5D9EC1D2018C02E00D1D69C /* youtube parser */,
 				F5DEC9C220134E28005F5DE3 /* model */,
@@ -286,6 +311,7 @@
 			files = (
 				04F9C00120D39BAA006FCF8C /* Main.storyboard in Resources */,
 				F57BE54E2029BF8600B6F247 /* VideoCell.xib in Resources */,
+				04F9C00920D3A4A8006FCF8C /* ITunesPlayerCell.xib in Resources */,
 				F5DEC9BA20134CF5005F5DE3 /* LaunchScreen.storyboard in Resources */,
 				F5DEC9CB20134F48005F5DE3 /* MainViewController.storyboard in Resources */,
 				F5DEC9B720134CF5005F5DE3 /* Assets.xcassets in Resources */,
@@ -349,6 +375,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DEC9C920134ECC005F5DE3 /* StoryboardList.swift in Sources */,
+				04F9C00520D3A48B006FCF8C /* ITunesPlayerViewController.swift in Sources */,
+				04F9C00820D3A4A8006FCF8C /* ITunesPlayerCell.swift in Sources */,
 				F577B9D3203DA6E500E81FAC /* Colors.swift in Sources */,
 				F57BE5552029C04500B6F247 /* Download.swift in Sources */,
 				F5DEC9B020134CF5005F5DE3 /* AppDelegate.swift in Sources */,

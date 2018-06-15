@@ -60,7 +60,7 @@
         <!--Item 1-->
         <scene sceneID="ykd-ca-70P">
             <objects>
-                <viewController id="eEC-3k-Nwa" sceneMemberID="viewController">
+                <viewController id="eEC-3k-Nwa" customClass="ITunesPlayerViewController" customModule="youtube_video_downloader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ekp-nQ-WsY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HUR-Ul-TZO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HUR-Ul-TZO">
                                 <rect key="frame" x="0.0" y="76" width="375" height="542"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -109,6 +109,9 @@
                         <viewLayoutGuide key="safeArea" id="TZZ-8D-8gw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="rwu-ki-XHS"/>
+                    <connections>
+                        <outlet property="tableView" destination="HUR-Ul-TZO" id="d4v-4n-pIK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmd-c9-qK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
