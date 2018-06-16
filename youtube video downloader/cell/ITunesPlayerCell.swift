@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ITunesPlayerCellDelegate: class {
+    func playSongAt(index: Int)
+}
+
 class ITunesPlayerCell: UITableViewCell {
 
     @IBOutlet weak var mainView: UIView! {
@@ -24,9 +28,12 @@ class ITunesPlayerCell: UITableViewCell {
     }
     
     var song: ITunesSong?
+    var index = 0
+    weak var delegate: ITunesPlayerCellDelegate?
     
-    func configure(song: ITunesSong) {
+    func configure(song: ITunesSong, index: Int) {
         self.song = song
+        self.index = index
         songNameLabel.text = song.songName
         authorNameLabel.text = song.authorName
     }
@@ -34,6 +41,6 @@ class ITunesPlayerCell: UITableViewCell {
 
 @objc extension ITunesPlayerCell {
     private func playPauseButtonAction() {
-        print("play")
+        delegate?.playSongAt(index: index)
     }
 }

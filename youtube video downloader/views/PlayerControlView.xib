@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="PlayerControlView" id="iN0-l3-epB" customClass="PlayerControlView" customModule="youtube_video_downloader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18c-po-ciQ">
+                    <rect key="frame" x="164" y="35" width="46" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="Woe-7t-uZf"/>
+                        <constraint firstAttribute="width" constant="46" id="lol-WV-Xd4"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yix-pA-doK">
+                    <rect key="frame" x="114" y="43" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="25R-ay-jOz"/>
+                        <constraint firstAttribute="width" constant="30" id="uMh-Qf-JTc"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCp-Em-9O8">
+                    <rect key="frame" x="6" y="6" width="363" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RG-GX-AjF">
+                    <rect key="frame" x="230" y="43" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="4tF-1h-Mik"/>
+                        <constraint firstAttribute="width" constant="30" id="JEL-kc-oo6"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0RG-GX-AjF" firstAttribute="centerY" secondItem="18c-po-ciQ" secondAttribute="centerY" id="2JX-ag-XxE"/>
+                <constraint firstItem="18c-po-ciQ" firstAttribute="leading" secondItem="yix-pA-doK" secondAttribute="trailing" constant="20" id="3wa-t3-vl2"/>
+                <constraint firstItem="0RG-GX-AjF" firstAttribute="leading" secondItem="18c-po-ciQ" secondAttribute="trailing" constant="20" id="4PR-nv-Zma"/>
+                <constraint firstItem="18c-po-ciQ" firstAttribute="top" secondItem="zCp-Em-9O8" secondAttribute="bottom" constant="8" id="9Jx-dd-uHy"/>
+                <constraint firstItem="zCp-Em-9O8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="6" id="TFG-bw-zSA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zCp-Em-9O8" secondAttribute="trailing" constant="6" id="eEh-YU-Q7s"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="18c-po-ciQ" secondAttribute="bottom" constant="8" id="lkE-uC-r1K"/>
+                <constraint firstItem="zCp-Em-9O8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="ndF-oC-tiZ"/>
+                <constraint firstItem="yix-pA-doK" firstAttribute="centerY" secondItem="18c-po-ciQ" secondAttribute="centerY" id="rbs-rs-UVh"/>
+                <constraint firstItem="18c-po-ciQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="t5l-ZN-E9W"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="nextButton" destination="0RG-GX-AjF" id="S5b-C0-URh"/>
+                <outlet property="playPauseButton" destination="18c-po-ciQ" id="ivn-re-3Ur"/>
+                <outlet property="previousButton" destination="yix-pA-doK" id="kYc-aG-G3A"/>
+                <outlet property="titleLabel" destination="zCp-Em-9O8" id="9nL-ax-jfI"/>
+            </connections>
+            <point key="canvasLocation" x="-93.5" y="-153"/>
+        </view>
+    </objects>
+</document>

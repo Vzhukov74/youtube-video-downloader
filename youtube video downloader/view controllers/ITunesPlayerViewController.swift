@@ -8,61 +8,6 @@
 
 import UIKit
 
-struct ITunesSearchResponse: Codable {
-    var resultCount: Int
-    var results: [ITunesSong]
-}
-
-struct ITunesSong: Codable {
-    let songName: String
-    let authorName: String
-    let url: String
-    
-    enum CodingKeys: String, CodingKey {
-        case songName = "trackName"
-        case authorName = "artistName"
-        case url = "previewUrl"
-    }
-}
-
-class ITunesPlayerModel {
-    var songs = [ITunesSong]()
-    
-    private let session = URLSession(configuration: .default)
-    private var task: URLSessionTask?
-    
-    func searchSongFor(text: String, completion: @escaping () -> Void) {
-        task?.cancel()
-        
-        guard var urlComponents = URLComponents(string: "https://itunes.apple.com/search") else { return }
-        urlComponents.query = "media=music&entity=song&term=\(text)"
-        guard let url = urlComponents.url else { return }
-        
-        task = session.dataTask(with: url, completionHandler: { (data, response, error) in
-            defer { self.task = nil }
-            
-            if let data = data {
-                guard let response = response as? HTTPURLResponse else { return }
-                if response.statusCode == 200 {
-                    let decoder = JSONDecoder()
-                    do {
-                        let responseData = try decoder.decode(ITunesSearchResponse.self, from: data)
-                        self.songs = responseData.results
-                        DispatchQueue.main.async {
-                            completion()
-                        }
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        })
-        task?.resume()
-    }
-}
-
 class ITunesPlayerViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView! {
@@ -81,6 +26,7 @@ class ITunesPlayerViewController: UIViewController {
             searchBar.returnKeyType = .done
         }
     }
+    @IBOutlet weak var tableViewBottomConstrain: NSLayoutConstraint!
     
     private var searchText = "" {
         didSet {
@@ -92,10 +38,46 @@ class ITunesPlayerViewController: UIViewController {
     
     var model = ITunesPlayerModel()
     
+    private var playerControlView = PlayerControlView()
+    private var playerControlViewBottomConstrain = NSLayoutConstraint()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tapAction)))
+        configurePlayerControlView()
+    }
+    
+    private func configurePlayerControlView() {
+        playerControlView = PlayerControlView.loadFromXib()
+        playerControlView.layer.cornerRadius = 4
+        playerControlView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(playerControlView)
+        
+        let heigh = -48
+        playerControlViewBottomConstrain = playerControlView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: CGFloat(heigh))
+        
+        let playerControlViewConstrains = [playerControlView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 8), playerControlView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -8), playerControlViewBottomConstrain]
+        
+        NSLayoutConstraint.activate(playerControlViewConstrains)
+        hidePlayerController()
+        playerControlView.delegate = self
+    }
+    
+    private func hidePlayerController() {
+        UIView.animate(withDuration: 0.3) {
+            self.playerControlViewBottomConstrain.constant = 100
+            self.tableViewBottomConstrain.constant = 0
+            self.loadViewIfNeeded()
+        }
+    }
+    
+    private func unhidePlayerController() {
+        UIView.animate(withDuration: 0.3) {
+            self.tableViewBottomConstrain.constant = 102
+            self.playerControlViewBottomConstrain.constant = -92
+            self.loadViewIfNeeded()
+        }
     }
 }
 
@@ -106,11 +88,22 @@ extension ITunesPlayerViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ITunesPlayerCell", for: indexPath) as? ITunesPlayerCell {
-            cell.configure(song: model.songs[indexPath.row])
+            let index = indexPath.row
+            cell.configure(song: model.songs[index], index: index)
+            cell.delegate = self
             
             return cell
         }
         return UITableViewCell()
+    }
+}
+
+extension ITunesPlayerViewController: ITunesPlayerCellDelegate {
+    func playSongAt(index: Int) {
+        if let song = model.playSongAt(index: index) {
+            unhidePlayerController()
+            playerControlView.configureFor(song: song)
+        }
     }
 }
 
@@ -129,5 +122,15 @@ extension ITunesPlayerViewController: UISearchBarDelegate {
 @objc extension ITunesPlayerViewController {
     private func tapAction() {
         self.view.endEditing(true)
+    }
+}
+
+extension ITunesPlayerViewController: PlayerControlViewDelegate {
+    func nextSong() -> ITunesSong? {
+        return model.nextSong()
+    }
+    
+    func previous() -> ITunesSong? {
+        return model.previous()
     }
 }
