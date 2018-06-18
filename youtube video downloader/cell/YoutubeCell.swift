@@ -26,12 +26,19 @@ class YoutubeCell: UITableViewCell {
             titleLabel.text = ""
         }
     }
-    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel! {
+        didSet {
+            progressLabel.text = ""
+        }
+    }
     @IBOutlet weak var controllButton: UIButton!
     
     func configure(video: YoutubeVideo) {
         titleLabel.text = video.title
         let url = URL(string: video.imageUrl ?? "")
-        titleImage.sd_setImage(with: url, completed: nil)
+        titleImage.sd_setImage(with: url, completed: { [weak self] (_, _, _, _) in
+            self?.titleImage.backgroundColor = UIColor.clear
+            self?.titleImage.layer.cornerRadius = 4
+        })
     }
 }

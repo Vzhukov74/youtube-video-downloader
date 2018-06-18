@@ -10,7 +10,7 @@ import UIKit
 
 protocol PlayerControlViewDelegate: class {
     func nextSong() -> ITunesSong?
-    func previous() -> ITunesSong?
+    func previousSong() -> ITunesSong?
 }
 
 class PlayerControlView: UIView {
@@ -32,7 +32,15 @@ class PlayerControlView: UIView {
         }
     }
     
-    private var isPlaying: Bool = false
+    private var isPlaying: Bool? {
+        didSet {
+            if isPlaying! {
+                playPauseButton.setImage(UIImage(named: "pause"), for: .normal)
+            } else {
+                playPauseButton.setImage(UIImage(named: "play"), for: .normal)
+            }
+        }
+    }
     private var player = ITunesPlayer()
     weak var delegate: PlayerControlViewDelegate?
 
@@ -40,15 +48,22 @@ class PlayerControlView: UIView {
         player.delegate = self
         player.setSongBy(urlStr: song.url)
         titleLabel.text = song.songName + " - " + song.authorName
+        isPlaying = true
     }
 }
 
 @objc extension PlayerControlView {
     private func playPauseButtonAction() {
-        if isPlaying {
-            player.stop()
-        } else {
+        if isPlaying == nil {
             nextButtonAction()
+        } else {
+            if isPlaying! {
+                player.stop()
+                isPlaying = !isPlaying!
+            } else {
+                player.start()
+                isPlaying = !isPlaying!
+            }
         }
     }
     
@@ -59,7 +74,7 @@ class PlayerControlView: UIView {
     }
     
     private func previousButtonAction() {
-        if let song = delegate?.previous() {
+        if let song = delegate?.previousSong() {
             configureFor(song: song)
         }
     }

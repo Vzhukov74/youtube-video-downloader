@@ -22,7 +22,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hH1-L6-qNp">
                         <rect key="frame" x="8" y="2" width="304" height="115.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y87-eY-clA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="y87-eY-clA">
                                 <rect key="frame" x="8" y="8" width="124" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -42,7 +42,7 @@
                                 <state key="normal" title="Download"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading: 99 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-l3-g0l">
-                                <rect key="frame" x="140" y="77" width="66" height="12"/>
+                                <rect key="frame" x="140" y="96" width="66" height="12"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -52,6 +52,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="YsN-hh-J4y" secondAttribute="trailing" constant="8" id="8lM-q0-ZxZ"/>
                             <constraint firstItem="SH4-GI-hyq" firstAttribute="top" secondItem="hH1-L6-qNp" secondAttribute="top" constant="8" id="IDo-FT-p0E"/>
+                            <constraint firstItem="gPc-l3-g0l" firstAttribute="bottom" secondItem="y87-eY-clA" secondAttribute="bottom" id="Jdc-A6-iZc"/>
                             <constraint firstItem="gPc-l3-g0l" firstAttribute="leading" secondItem="y87-eY-clA" secondAttribute="trailing" constant="8" id="OCv-GZ-mZZ"/>
                             <constraint firstItem="y87-eY-clA" firstAttribute="top" secondItem="hH1-L6-qNp" secondAttribute="top" constant="8" id="QEs-FI-mWd"/>
                             <constraint firstItem="y87-eY-clA" firstAttribute="leading" secondItem="hH1-L6-qNp" secondAttribute="leading" constant="8" id="UzH-iU-QJN"/>
@@ -59,7 +60,6 @@
                             <constraint firstItem="SH4-GI-hyq" firstAttribute="leading" secondItem="y87-eY-clA" secondAttribute="trailing" constant="8" id="h9I-KV-Abg"/>
                             <constraint firstAttribute="trailing" secondItem="SH4-GI-hyq" secondAttribute="trailing" constant="8" id="jeP-35-PQe"/>
                             <constraint firstAttribute="bottom" secondItem="YsN-hh-J4y" secondAttribute="bottom" constant="8" id="mvP-qt-jSm"/>
-                            <constraint firstItem="gPc-l3-g0l" firstAttribute="top" secondItem="YsN-hh-J4y" secondAttribute="top" id="p88-GZ-eWQ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -83,4 +83,7 @@
             <point key="canvasLocation" x="34" y="92"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="bg" width="2560" height="1600"/>
+    </resources>
 </document>

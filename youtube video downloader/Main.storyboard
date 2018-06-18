@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--YouTube-->
         <scene sceneID="bwB-vH-fiS">
             <objects>
                 <viewController storyboardIdentifier="YoutubeViewController" id="6bM-1k-tio" customClass="YoutubeViewController" customModule="youtube_video_downloader" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GT4-Xu-HyB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="pdA-UR-2aH"/>
+                    <tabBarItem key="tabBarItem" title="YouTube" selectedImage="youtube" id="pdA-UR-2aH"/>
                     <connections>
                         <outlet property="tableView" destination="4TI-QU-tY0" id="8Os-F3-tI5"/>
                     </connections>
@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="248.80000000000001" y="195.6521739130435"/>
         </scene>
-        <!--Item 1-->
+        <!--iTunes-->
         <scene sceneID="ykd-ca-70P">
             <objects>
                 <viewController id="eEC-3k-Nwa" customClass="ITunesPlayerViewController" customModule="youtube_video_downloader" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,7 +111,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TZZ-8D-8gw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="rwu-ki-XHS"/>
+                    <tabBarItem key="tabBarItem" title="iTunes" selectedImage="itunes" id="rwu-ki-XHS"/>
                     <connections>
                         <outlet property="searchBar" destination="mId-HM-2rW" id="YDm-h3-zeB"/>
                         <outlet property="tableView" destination="HUR-Ul-TZO" id="d4v-4n-pIK"/>
@@ -130,6 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="eEC-3k-Nwa" kind="relationship" relationship="viewControllers" id="mqr-tB-vEy"/>
@@ -143,5 +144,7 @@
     </scenes>
     <resources>
         <image name="bg" width="2560" height="1600"/>
+        <image name="itunes" width="23" height="23"/>
+        <image name="youtube" width="21" height="21"/>
     </resources>
 </document>

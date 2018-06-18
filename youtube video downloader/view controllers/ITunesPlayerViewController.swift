@@ -130,7 +130,7 @@ extension ITunesPlayerViewController: PlayerControlViewDelegate {
         return model.nextSong()
     }
     
-    func previous() -> ITunesSong? {
+    func previousSong() -> ITunesSong? {
         return model.previous()
     }
 }
