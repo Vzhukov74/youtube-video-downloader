@@ -13,7 +13,7 @@
         <!--Item 2-->
         <scene sceneID="bwB-vH-fiS">
             <objects>
-                <viewController id="6bM-1k-tio" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YoutubeViewController" id="6bM-1k-tio" customClass="YoutubeViewController" customModule="youtube_video_downloader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CX9-o7-QeU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,6 +52,9 @@
                         <viewLayoutGuide key="safeArea" id="GT4-Xu-HyB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="pdA-UR-2aH"/>
+                    <connections>
+                        <outlet property="tableView" destination="4TI-QU-tY0" id="8Os-F3-tI5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIe-Yo-tih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

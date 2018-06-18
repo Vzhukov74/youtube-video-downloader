@@ -22,6 +22,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let console = ConsoleDestination()
         log.addDestination(console)
         
+        InitDataHelper.initDatastoreIfNeeded()
+        
+//        let strs = ["https://www.youtube.com/watch?v=8wh2YpFKB1g", "https://www.youtube.com/watch?v=0dwvL5wo3uI", "https://www.youtube.com/watch?v=R-3GFhihEYc", "https://www.youtube.com/watch?v=teTTOMg_ZsA&list=RDteTTOMg_ZsA"]
+//        
+//        for str in strs {
+//            let video = HCYoutubeParser.h264videos(withYoutubeURL: URL(string: str)!)
+//            let hd = video!["hd720"]
+//            
+//            let image = (video!["moreInfo"] as! [String: Any])["thumbnail_url"] as! String
+//            let title = (video!["moreInfo"] as! [String: Any])["title"] as! String
+//            
+//            let url = hd as! String
+//            
+//            print(title)
+//            print(image)
+//            print(url)
+//            
+//            SwiftyBeaver.info(url)
+//        }
+
         return true
     }
 

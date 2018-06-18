@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0447DF0520D7A484006F0014 /* YoutubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447DF0420D7A484006F0014 /* YoutubeViewController.swift */; };
+		0447DF0820D7A538006F0014 /* YoutubeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447DF0620D7A538006F0014 /* YoutubeCell.swift */; };
+		0447DF0920D7A538006F0014 /* YoutubeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0447DF0720D7A538006F0014 /* YoutubeCell.xib */; };
+		0447DF0C20D7AE73006F0014 /* InitDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447DF0B20D7AE73006F0014 /* InitDataHelper.swift */; };
+		0447DF1220D7AEC9006F0014 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0447DF1020D7AEC9006F0014 /* CoreDataModel.xcdatamodeld */; };
+		0447DF1420D7B083006F0014 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447DF1320D7B083006F0014 /* DatabaseHelper.swift */; };
+		0447DF1620D7B0EF006F0014 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447DF1520D7B0EF006F0014 /* CoreData.framework */; };
+		0447DF1820D7B6DF006F0014 /* YoutubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447DF1720D7B6DF006F0014 /* YoutubeModel.swift */; };
 		04F9C00120D39BAA006FCF8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F9C00020D39BAA006FCF8C /* Main.storyboard */; };
 		04F9C00520D3A48B006FCF8C /* ITunesPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C00420D3A48B006FCF8C /* ITunesPlayerViewController.swift */; };
 		04F9C00820D3A4A8006FCF8C /* ITunesPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F9C00620D3A4A8006FCF8C /* ITunesPlayerCell.swift */; };
@@ -37,6 +45,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0447DF0420D7A484006F0014 /* YoutubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewController.swift; sourceTree = "<group>"; };
+		0447DF0620D7A538006F0014 /* YoutubeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeCell.swift; sourceTree = "<group>"; };
+		0447DF0720D7A538006F0014 /* YoutubeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YoutubeCell.xib; sourceTree = "<group>"; };
+		0447DF0B20D7AE73006F0014 /* InitDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitDataHelper.swift; sourceTree = "<group>"; };
+		0447DF1120D7AEC9006F0014 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		0447DF1320D7B083006F0014 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		0447DF1520D7B0EF006F0014 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0447DF1720D7B6DF006F0014 /* YoutubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeModel.swift; sourceTree = "<group>"; };
 		04F9C00020D39BAA006FCF8C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		04F9C00420D3A48B006FCF8C /* ITunesPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesPlayerViewController.swift; sourceTree = "<group>"; };
 		04F9C00620D3A4A8006FCF8C /* ITunesPlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesPlayerCell.swift; sourceTree = "<group>"; };
@@ -77,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0447DF1620D7B0EF006F0014 /* CoreData.framework in Frameworks */,
 				08F9008F9449FEDB705386C6 /* Pods_youtube_video_downloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,11 +110,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		0447DF0A20D7AE57006F0014 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				0447DF0B20D7AE73006F0014 /* InitDataHelper.swift */,
+				0447DF1020D7AEC9006F0014 /* CoreDataModel.xcdatamodeld */,
+				0447DF1320D7B083006F0014 /* DatabaseHelper.swift */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
 		04F9C00220D3A402006FCF8C /* cell */ = {
 			isa = PBXGroup;
 			children = (
 				04F9C00620D3A4A8006FCF8C /* ITunesPlayerCell.swift */,
 				04F9C00720D3A4A8006FCF8C /* ITunesPlayerCell.xib */,
+				0447DF0620D7A538006F0014 /* YoutubeCell.swift */,
+				0447DF0720D7A538006F0014 /* YoutubeCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -106,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				04F9C00420D3A48B006FCF8C /* ITunesPlayerViewController.swift */,
+				0447DF0420D7A484006F0014 /* YoutubeViewController.swift */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -113,6 +143,7 @@
 		979BA64F5D7C1D9AEF80B308 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0447DF1520D7B0EF006F0014 /* CoreData.framework */,
 				E729C25E8934FFF079408533 /* Pods_youtube_video_downloader.framework */,
 			);
 			name = Frameworks;
@@ -183,6 +214,7 @@
 		F5DEC9AE20134CF5005F5DE3 /* youtube video downloader */ = {
 			isa = PBXGroup;
 			children = (
+				0447DF0A20D7AE57006F0014 /* database */,
 				F5FF6DF420D42C87004FBAFD /* views */,
 				F5FF6DEF20D42B8A004FBAFD /* models */,
 				04F9C00320D3A436006FCF8C /* view controllers */,
@@ -262,6 +294,7 @@
 			children = (
 				F5FF6DF020D42BB5004FBAFD /* ITunesPlayerModel.swift */,
 				F5FF6DF220D42BF3004FBAFD /* ITunesPlayer.swift */,
+				0447DF1720D7B6DF006F0014 /* YoutubeModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -344,6 +377,7 @@
 				F5DEC9BA20134CF5005F5DE3 /* LaunchScreen.storyboard in Resources */,
 				F5DEC9CB20134F48005F5DE3 /* MainViewController.storyboard in Resources */,
 				F5DEC9B720134CF5005F5DE3 /* Assets.xcassets in Resources */,
+				0447DF0920D7A538006F0014 /* YoutubeCell.xib in Resources */,
 				F57BE55B2029C85100B6F247 /* DetailViewController.storyboard in Resources */,
 				F5DEC9D020134FE7005F5DE3 /* MainNavigationController.storyboard in Resources */,
 			);
@@ -408,18 +442,24 @@
 				F5FF6DF320D42BF3004FBAFD /* ITunesPlayer.swift in Sources */,
 				04F9C00820D3A4A8006FCF8C /* ITunesPlayerCell.swift in Sources */,
 				F577B9D3203DA6E500E81FAC /* Colors.swift in Sources */,
+				0447DF1220D7AEC9006F0014 /* CoreDataModel.xcdatamodeld in Sources */,
 				F57BE5552029C04500B6F247 /* Download.swift in Sources */,
 				F5DEC9B020134CF5005F5DE3 /* AppDelegate.swift in Sources */,
 				F5DEC9CE20134F6B005F5DE3 /* MainNavigationController.swift in Sources */,
+				0447DF0520D7A484006F0014 /* YoutubeViewController.swift in Sources */,
 				F57BE5532029BFDB00B6F247 /* CellExt.swift in Sources */,
 				F5D9EC212018C04500D1D69C /* HCYoutubeParser.m in Sources */,
 				F57BE5572029C06000B6F247 /* DownloadCenter.swift in Sources */,
 				F57BE55D2029C8D800B6F247 /* Video.swift in Sources */,
+				0447DF1420D7B083006F0014 /* DatabaseHelper.swift in Sources */,
 				F57BE5592029C84300B6F247 /* DetailViewController.swift in Sources */,
 				F5FF6DF120D42BB5004FBAFD /* ITunesPlayerModel.swift in Sources */,
 				F5DEC9C620134E67005F5DE3 /* MainViewController.swift in Sources */,
 				F57BE54D2029BF8600B6F247 /* VideoCell.swift in Sources */,
+				0447DF0C20D7AE73006F0014 /* InitDataHelper.swift in Sources */,
 				F5FF6DF620D51704004FBAFD /* PlayerControlView.swift in Sources */,
+				0447DF1820D7B6DF006F0014 /* YoutubeModel.swift in Sources */,
+				0447DF0820D7A538006F0014 /* YoutubeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +643,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0447DF1020D7AEC9006F0014 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0447DF1120D7AEC9006F0014 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 0447DF1120D7AEC9006F0014 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			usesTabs = 0;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F5DEC9A420134CF5005F5DE3 /* Project object */;
 }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="YoutubeCell" customModule="youtube_video_downloader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hH1-L6-qNp">
+                        <rect key="frame" x="8" y="2" width="304" height="115.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y87-eY-clA">
+                                <rect key="frame" x="8" y="8" width="124" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8MC-yG-9ON"/>
+                                    <constraint firstAttribute="width" constant="124" id="TTu-LJ-2dC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SH4-GI-hyq">
+                                <rect key="frame" x="140" y="8" width="156" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsN-hh-J4y">
+                                <rect key="frame" x="223" y="77" width="73" height="31"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Download"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading: 99 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-l3-g0l">
+                                <rect key="frame" x="140" y="77" width="66" height="12"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YsN-hh-J4y" secondAttribute="trailing" constant="8" id="8lM-q0-ZxZ"/>
+                            <constraint firstItem="SH4-GI-hyq" firstAttribute="top" secondItem="hH1-L6-qNp" secondAttribute="top" constant="8" id="IDo-FT-p0E"/>
+                            <constraint firstItem="gPc-l3-g0l" firstAttribute="leading" secondItem="y87-eY-clA" secondAttribute="trailing" constant="8" id="OCv-GZ-mZZ"/>
+                            <constraint firstItem="y87-eY-clA" firstAttribute="top" secondItem="hH1-L6-qNp" secondAttribute="top" constant="8" id="QEs-FI-mWd"/>
+                            <constraint firstItem="y87-eY-clA" firstAttribute="leading" secondItem="hH1-L6-qNp" secondAttribute="leading" constant="8" id="UzH-iU-QJN"/>
+                            <constraint firstAttribute="bottom" secondItem="y87-eY-clA" secondAttribute="bottom" constant="8" id="dYH-y2-6xd"/>
+                            <constraint firstItem="SH4-GI-hyq" firstAttribute="leading" secondItem="y87-eY-clA" secondAttribute="trailing" constant="8" id="h9I-KV-Abg"/>
+                            <constraint firstAttribute="trailing" secondItem="SH4-GI-hyq" secondAttribute="trailing" constant="8" id="jeP-35-PQe"/>
+                            <constraint firstAttribute="bottom" secondItem="YsN-hh-J4y" secondAttribute="bottom" constant="8" id="mvP-qt-jSm"/>
+                            <constraint firstItem="gPc-l3-g0l" firstAttribute="top" secondItem="YsN-hh-J4y" secondAttribute="top" id="p88-GZ-eWQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="hH1-L6-qNp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="R5T-Nn-6dE"/>
+                    <constraint firstAttribute="trailing" secondItem="hH1-L6-qNp" secondAttribute="trailing" constant="8" id="VrP-RF-ikb"/>
+                    <constraint firstItem="hH1-L6-qNp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="ZVS-Em-e7I"/>
+                    <constraint firstAttribute="bottom" secondItem="hH1-L6-qNp" secondAttribute="bottom" constant="2" id="mvg-th-sF5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="controllButton" destination="YsN-hh-J4y" id="GNZ-Oo-P9f"/>
+                <outlet property="mainView" destination="hH1-L6-qNp" id="jRh-51-wGC"/>
+                <outlet property="progressLabel" destination="gPc-l3-g0l" id="yfx-Z0-1XK"/>
+                <outlet property="titleImage" destination="y87-eY-clA" id="F0j-Lk-h37"/>
+                <outlet property="titleLabel" destination="SH4-GI-hyq" id="oaC-ER-ZiR"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="92"/>
+        </tableViewCell>
+    </objects>
+</document>
