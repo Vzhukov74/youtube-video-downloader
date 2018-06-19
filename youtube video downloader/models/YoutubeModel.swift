@@ -9,7 +9,19 @@
 import Foundation
 import CoreData
 
+enum YoutubeVideoStatus: Int {
+    case notDownload
+    case downloading
+    case downloaded
+}
+
 class YoutubeModel {
+    
+    lazy private var downloadManager = { () -> DownloadManager in
+        let downloadManager = DownloadManager()
+        downloadManager.delegate = self
+        return downloadManager
+    }()
     
     var videos = [YoutubeVideo]() {
         didSet {
@@ -29,5 +41,35 @@ class YoutubeModel {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func startDownloadFor(video: YoutubeVideo) {
+        guard let url = video.url, !url.isEmpty else { return }
+        downloadManager.startDownloadFileBy(url)
+    }
+    
+    func pauseDownloadFor(video: YoutubeVideo) {
+        guard let url = video.url, !url.isEmpty else { return }
+        downloadManager.pauseDownloadFileBy(url)
+    }
+    
+    func cancelDownloadFor(video: YoutubeVideo) {
+        guard let url = video.url, !url.isEmpty else { return }
+        downloadManager.cancelDownloadFileBy(url)
+    }
+    
+    func resumeDownloadFor(video: YoutubeVideo) {
+        guard let url = video.url, !url.isEmpty else { return }
+        downloadManager.resumeDownloadFileBy(url)
+    }
+}
+
+extension YoutubeModel: DownloadManagerDelegate {
+    func didDownloadFileTo(location: URL) {
+        
+    }
+    
+    func dudUpdatedProgressForFileBy(url: String, progress: Float) {
+        
     }
 }

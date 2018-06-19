@@ -9,6 +9,10 @@
 import UIKit
 import SDWebImage
 
+protocol YoutubeCellDelegate: class {
+    func startDownloadFor(video: YoutubeVideo)
+}
+
 class YoutubeCell: UITableViewCell {
 
     @IBOutlet weak var mainView: UIView! {
@@ -31,14 +35,33 @@ class YoutubeCell: UITableViewCell {
             progressLabel.text = ""
         }
     }
-    @IBOutlet weak var controllButton: UIButton!
+    @IBOutlet weak var controllButton: UIButton! {
+        didSet {
+            controllButton.addTarget(self, action: #selector(self.downloadAction), for: .touchUpInside)
+        }
+    }
+    
+    private var video: YoutubeVideo?
+    
+    weak var delegate: YoutubeCellDelegate?
     
     func configure(video: YoutubeVideo) {
+        self.video = video
         titleLabel.text = video.title
         let url = URL(string: video.imageUrl ?? "")
         titleImage.sd_setImage(with: url, completed: { [weak self] (_, _, _, _) in
             self?.titleImage.backgroundColor = UIColor.clear
             self?.titleImage.layer.cornerRadius = 4
         })
+    }
+    
+    func setProgress() {
+        
+    }
+}
+
+@objc extension YoutubeCell {
+    private func downloadAction() {
+        delegate?.startDownloadFor(video: video!)
     }
 }

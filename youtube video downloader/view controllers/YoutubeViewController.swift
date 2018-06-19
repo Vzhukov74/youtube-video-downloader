@@ -43,11 +43,25 @@ extension YoutubeViewController: UITableViewDataSource, UITableViewDelegate {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "YoutubeCell", for: indexPath) as? YoutubeCell {
             let index = indexPath.row
             cell.configure(video: model.videos[index])
-            //cell.delegate = self
+            cell.delegate = self
             
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let path = model.videos[indexPath.row].path, !path.isEmpty {
+            
+        }
+    }
+}
+
+extension YoutubeViewController: YoutubeCellDelegate {
+    func startDownloadFor(video: YoutubeVideo) {
+        model.startDownloadFor(video: video)
     }
 }
 

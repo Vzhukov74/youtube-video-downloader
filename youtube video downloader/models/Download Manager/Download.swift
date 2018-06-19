@@ -18,7 +18,7 @@ class Download {
     
     var sizeInByte: Int64 = 0
     
-    init(url:String) {
+    init(url: String) {
         self.url = url
     }
 }

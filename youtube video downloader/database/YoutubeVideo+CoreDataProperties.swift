@@ -22,4 +22,8 @@ extension YoutubeVideo: EntityCreating {
     @NSManaged public var status: Int64
     @NSManaged public var path: String?
 
+    
+    func status() -> YoutubeVideoStatus {
+        return YoutubeVideoStatus.init(rawValue: status)
+    }
 }
