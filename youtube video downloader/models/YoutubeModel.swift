@@ -9,21 +9,32 @@
 import Foundation
 import CoreData
 
+class YoutubeVideoContainer {
+    let video: YoutubeVideo
+    weak var downloadManager: DownloadManager?
+    var state: YoutubeVideoStatus = .notDownload
+    
+    init(video: YoutubeVideo) {
+        self.video = video
+    }
+}
+
 enum YoutubeVideoStatus: Int {
     case notDownload
     case downloading
+    case paused
     case downloaded
+    case saved
 }
 
 class YoutubeModel {
     
     lazy private var downloadManager = { () -> DownloadManager in
         let downloadManager = DownloadManager()
-        downloadManager.delegate = self
         return downloadManager
     }()
     
-    var videos = [YoutubeVideo]() {
+    var videos = [YoutubeVideoContainer]() {
         didSet {
             self.needUpdateUI?()
         }
@@ -37,39 +48,16 @@ class YoutubeModel {
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: DatabaseHelper.shared.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         do {
             try fetchedResultsController.performFetch()
-            self.videos = fetchedResultsController.fetchedObjects as? [YoutubeVideo] ?? []
+            let elements = fetchedResultsController.fetchedObjects as? [YoutubeVideo] ?? []
+            var _videos = [YoutubeVideoContainer]()
+            elements.forEach { (element) in
+                let _video = YoutubeVideoContainer(video: element)
+                _video.downloadManager = self.downloadManager
+                _videos.append(_video)
+            }
+            videos = _videos
         } catch {
             print(error.localizedDescription)
         }
-    }
-    
-    func startDownloadFor(video: YoutubeVideo) {
-        guard let url = video.url, !url.isEmpty else { return }
-        downloadManager.startDownloadFileBy(url)
-    }
-    
-    func pauseDownloadFor(video: YoutubeVideo) {
-        guard let url = video.url, !url.isEmpty else { return }
-        downloadManager.pauseDownloadFileBy(url)
-    }
-    
-    func cancelDownloadFor(video: YoutubeVideo) {
-        guard let url = video.url, !url.isEmpty else { return }
-        downloadManager.cancelDownloadFileBy(url)
-    }
-    
-    func resumeDownloadFor(video: YoutubeVideo) {
-        guard let url = video.url, !url.isEmpty else { return }
-        downloadManager.resumeDownloadFileBy(url)
-    }
-}
-
-extension YoutubeModel: DownloadManagerDelegate {
-    func didDownloadFileTo(location: URL) {
-        
-    }
-    
-    func dudUpdatedProgressForFileBy(url: String, progress: Float) {
-        
     }
 }

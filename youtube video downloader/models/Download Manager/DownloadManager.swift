@@ -10,7 +10,7 @@ import Foundation
 
 protocol DownloadManagerDelegate: class {
     func didDownloadFileTo(location: URL)
-    func dudUpdatedProgressForFileBy(url: String, progress: Float)
+    func didUpdatedProgressForFileBy(url: String, progress: Float)
 }
 
 class DownloadManager: NSObject {
@@ -22,7 +22,15 @@ class DownloadManager: NSObject {
         return session
     }()
     
-    weak var delegate: DownloadManagerDelegate?
+    private var delegates: [String: DownloadManagerDelegate] = [String: DownloadManagerDelegate]()
+    
+    func addDelegate(key: String, delegate: DownloadManagerDelegate) {
+        delegates[key] = delegate
+    }
+    
+    func removeDelegate(key: String) {
+        delegates[key] = nil
+    }
     
     func startDownloadFileBy(_ url: String) {
         let task = Download(url: url)
@@ -64,7 +72,11 @@ class DownloadManager: NSObject {
 
 extension DownloadManager: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        self.delegate?.didDownloadFileTo(location: location)
+        guard let url = downloadTask.originalRequest?.url?.absoluteString else { return }
+        
+        if let delegate = delegates[url] {
+            delegate.didDownloadFileTo(location: location)
+        }
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
@@ -73,15 +85,9 @@ extension DownloadManager: URLSessionDownloadDelegate {
             let download = downloads[url]  else { return }
 
         download.progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
-        //let totalSize = ByteCountFormatter.string(fromByteCount: totalBytesExpectedToWrite, countStyle: .file)
         
-        self.delegate?.dudUpdatedProgressForFileBy(url: url, progress: download.progress)
-        
-//        DispatchQueue.main.async {
-//            if let trackCell = self.tableView.cellForRow(at: IndexPath(row: download.track.index,
-//                                                                       section: 0)) as? TrackCell {
-//                trackCell.updateDisplay(progress: download.progress, totalSize: totalSize)
-//            }
-//        }
+        if let delegate = delegates[url] {
+            delegate.didUpdatedProgressForFileBy(url: url, progress: download.progress)
+        }
     }
 }

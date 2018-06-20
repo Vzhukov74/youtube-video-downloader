@@ -2,7 +2,7 @@
 //  YoutubeVideo+CoreDataClass.swift
 //  
 //
-//  Created by Maximal Mac on 18.06.2018.
+//  Created by Maximal Mac on 20.06.2018.
 //
 //
 

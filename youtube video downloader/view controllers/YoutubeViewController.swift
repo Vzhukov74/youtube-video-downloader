@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 import SwiftyBeaver
-
 
 class YoutubeViewController: UIViewController {
     
@@ -43,7 +44,6 @@ extension YoutubeViewController: UITableViewDataSource, UITableViewDelegate {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "YoutubeCell", for: indexPath) as? YoutubeCell {
             let index = indexPath.row
             cell.configure(video: model.videos[index])
-            cell.delegate = self
             
             return cell
         }
@@ -53,17 +53,15 @@ extension YoutubeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let path = model.videos[indexPath.row].path, !path.isEmpty {
-            
+        if let path = model.videos[indexPath.row].video.path, !path.isEmpty {
+            print(path)
+            let videoURL = URL(string: path)
+            let player = AVPlayer(url: videoURL!)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            self.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
         }
     }
 }
-
-extension YoutubeViewController: YoutubeCellDelegate {
-    func startDownloadFor(video: YoutubeVideo) {
-        model.startDownloadFor(video: video)
-    }
-}
-
-
-
