@@ -113,12 +113,16 @@ extension YoutubeCell: DownloadManagerDelegate {
             }
             _video.video.path = destinationURL.absoluteString
             DatabaseHelper.shared.saveContext()
+            DispatchQueue.main.async {
+                self.progressLabel.text = "Downloaded"
+            }
         }
     }
     
     func didUpdatedProgressForFileBy(url: String, progress: Float) {
         DispatchQueue.main.async {
-            self.progressLabel.text = "Loading: \(progress)"
+            let progressStr = String(format: "%.2f", (progress * Float(100)))
+            self.progressLabel.text = "Loading: \(progressStr)%"
         }
     }
 }
